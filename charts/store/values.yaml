@@ -1,0 +1,14 @@
+wordpress:
+  image: wordpress:6.4-apache
+  replicas: 1
+
+mysql:
+  image: mysql:8.0
+  database: wordpress
+  user: wpuser
+  password: wppassword
+  rootPassword: rootpassword
+
+service:
+  type: ClusterIP
+  port: 80
